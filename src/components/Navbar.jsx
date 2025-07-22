@@ -6,14 +6,19 @@ export const Navbar = () => {
 		<div className="container">
 		<nav className="navbar navbar-light bg-light">
 			<div className="container ">
-				<div className="ml-auto">
-					<Link to="/demo">
+				 <Link to="/ContactCard">
+						<p>HOME</p>
+					</Link>
+				
+					<Link to="/AddContact">
 						<button className="btn bg-success">Add new contact</button>
 					</Link>
-				</div>
+				
 			</div>
 		</nav>
 		</div>
 
 	);
 };
+
+export default Navbar;
