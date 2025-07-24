@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<div className="container">
 		<nav className="navbar navbar-light bg-light">
 			<div className="container ">
-				 <Link to="/ContactCard">
+				 <Link to="/">
 						<p>HOME</p>
 					</Link>
 				

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState , useEffect } from "react";
 import getTodos from "../hooks/Accion";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+import { useNavigate } from "react-router-dom";
 
 
 const AddContact = () =>{
@@ -9,9 +10,9 @@ const AddContact = () =>{
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
+    const navigate = useNavigate()
     const { store, dispatch } = useGlobalReducer()
     
-
        const createUser = () => {
         fetch("https://playground.4geeks.com/contact/agendas/Nicolle", {
             method: 'POST',
@@ -26,27 +27,28 @@ const AddContact = () =>{
             .catch((error) => console.log(error));
     };
     const createContact = () =>{
+        console.log({name, email, address, phone})
        fetch("https://playground.4geeks.com/contact/agendas/Nicolle/contacts", {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body:{
-                "name": name,
-               "phone": phone,
-               "email": email,
-              "address": address
-            }
+            body: JSON.stringify({
+            name: name,
+            phone: phone,
+            email: email,
+            address: address,
+          }),
         })
          .then((response) => {
                 if (!response.ok) {
                     console.log("El usuario ya existe o error al crearlo");
                 }
-                getTodos();
+                getTodos(dispatch); 
+                navigate("/")
             })
             return 
     }
     return(
         
-
     <div className="list-group">
         <h1 className="text-center">Add a new contact</h1>
         
@@ -70,7 +72,7 @@ const AddContact = () =>{
        
         <label htmlFor="Phone">Phone</label>
          <input className="form-control" 
-         type="tel" 
+         type="num" 
          name="Phone" 
          value={phone}
          placeholder="Enter phone"

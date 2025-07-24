@@ -3,12 +3,26 @@
     left: 700px;
 }
 .container{
-    width: 900px;   
+    padding: 10px;
+    width: 900px;  
+    left: 280px;
+    box-shadow: 50px gainsboro;
+}
+
+.container:hover{
+    background-color: aliceblue;
+    transform: translateY(-10px);
+   
+
+
 }
 .list-group{
     width: 875px;
     position: relative;
     left: 280px;
+    box-shadow: 50px 20px 30px gainsboro;
+  
+   
 }
 .imagen{
     width: 200px;
@@ -20,21 +34,22 @@
 .fa-location-dot{
     font-size: 23px;
     position: relative;
-    top: -30px;
-    left: 20px;
-
-}
-.fa-envelope{
-    font-size: 23px;
-    position: relative;
-    top: 5px;
-    left: -23px;
+    top: -360px;
+    left: 240px;
 }
 .fa-phone{
     font-size: 23px;
     position: relative;
-    bottom: -45px;  
+     top: -300px;
+    left: 220px;
 }
+.fa-envelope{
+    font-size: 23px;
+    position: relative;
+    top: -240px;
+    left: 200px;
+}
+
 .titulo{
     display: flex;
     justify-content: center;
@@ -45,14 +60,40 @@
 .fa-pen{
     font-size: 23px;
     position: relative;
-    right: -465px;
-    top: -50px;
+    right: -645px;
+    top: -415px;
 }
 
 .fa-trash{
      font-size: 23px;
     position: relative;
-    right: -500px;
-    top: -50px;
+    right: -680px;
+    top: -413px;
  
+}
+.information {
+    position: relative;
+    left: 290px;
+    bottom: 200px;
+    color:gray;
+    font-size: 20px;
+}
+
+.name{
+    position: relative;
+    top: -200px;
+    right: -240px;
+  
+}
+
+.HOME{
+    font-size: 70px;
+    position: relative;
+    right: -300px;
+    bottom: -200px;
+    color: pink;
+}
+.list-group-item:hover{
+    background-color: aliceblue;
+    transform: translateY(-10px);
 }
